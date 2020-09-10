@@ -8,6 +8,7 @@
       "containers/*": ["./src/containers/*"],
       "router/*": ["./src/router/*"],
       "store/*": ["./src/store/*"],
+      "modules/*": ["./src/modules/*"],
       "utils/*": ["./src/utils/*"],
       "theme/*": ["./src/theme/*"],
       "static/*": ["./src/static/*"]
