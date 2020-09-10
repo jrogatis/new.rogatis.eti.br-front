@@ -7,7 +7,54 @@
   ],
   "plugins": [
     "prettier",
+    "cypress"
   ],
+  "env": {
+    "cypress/globals": true
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          [
+            "components",
+            "./src/components"
+          ],
+       
+          [
+            "containers",
+            "./src/containers"
+          ],
+     
+          [
+            "router",
+            "./src/router"
+          ],
+    
+          [
+            "store",
+            "./src/store"
+          ],
+          [
+            "utils",
+            "./src/utils"
+          ],
+          [
+            "theme",
+            "./src/theme"
+          ],
+          [
+            "static",
+            "./src/static"
+          ]
+        ],
+        "extensions": [
+          ".js",
+          ".json"
+        ]
+      }
+    }
+  },
     "rules": {
       "prettier/prettier": "error",
       "jsx-a11y/href-no-hash": 0,

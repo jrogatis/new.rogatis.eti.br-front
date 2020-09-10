@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from 'react';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/lib/integration/react';
+import { ThemeProvider } from '@material-ui/core/styles';
+import Spinner from 'components/Spinner';
+import { history, store, persistor } from 'store';
+import theme from 'theme';
+import Router from 'router';
 
-function App() {
+const newApp = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <PersistGate loading={<div>Loading Persist</div>} persistor={persistor}>
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
+      </PersistGate>
+    </Provider>
   );
-}
+};
 
-export default App;
+const App = () => (
+  <Suspense fallback={<Spinner />}>
+    <Router history={history} />
+  </Suspense>
+);
+
+export default newApp;
