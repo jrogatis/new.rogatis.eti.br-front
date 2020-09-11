@@ -5,18 +5,26 @@ import classNames from 'classnames';
 
 const useStyles = makeStyles(theme => ({
   button: {
-    minWidth: '110px',
     textTransform: 'none',
     fontSize: '1.3rem',
     fontWeight: 800,
     '&:hover': {
       backgroundColor: '#FFFFFF',
       borderColor: '#FFFFFF',
-      color: '#000066',
+      color: '#064A99',
     },
   },
-  buttonSelected: {
-    borderBottom: '3px solid white',
+  divSelected: {
+    borderWidth: '1px',
+    borderStyle: 'solid',
+    maxHeight: '0.6px',
+    borderColor: 'transparent',
+  },
+  selected: {
+    borderColor: 'white',
+    borderWidth: '1px',
+    borderStyle: 'solid',
+    maxHeight: '0.6px',
   },
 }));
 
@@ -28,52 +36,66 @@ const CenterHeader = () => {
     history.push(name);
   };
 
+  const renderSelectionBar = value => {
+    return (
+      <Grid container direction="column">
+        {value}
+        <div
+          className={classNames(
+            classes.divSelected,
+            selectedBtn === value ? classes.selected : null,
+          )}
+        />
+      </Grid>
+    );
+  };
+
   return (
-    <Grid container direction="row" justify="flex-end" alignItems="center">
-      <Button
-        className={classNames(
-          classes.button,
-          selectedBtn === 'about' ? classes.buttonSelected : null,
-        )}
-        data-cy="aboutButton"
-        color="inherit"
-        onClick={() => handleClick('about')}
-      >
-        about
-      </Button>
-      <Button
-        className={classNames(
-          classes.button,
-          selectedBtn === 'portfolio' ? classes.buttonSelected : null,
-        )}
-        data-cy="portfolioButton"
-        color="inherit"
-        onClick={() => handleClick('portfolio')}
-      >
-        portfolio
-      </Button>
-      <Button
-        className={classNames(
-          classes.button,
-          selectedBtn === 'blog' ? classes.buttonSelected : null,
-        )}
-        data-cy="blogButton"
-        onClick={() => handleClick('blog')}
-        color="inherit"
-      >
-        blog
-      </Button>
-      <Button
-        className={classNames(
-          classes.button,
-          selectedBtn === 'contact' ? classes.buttonSelected : null,
-        )}
-        data-cy="contact Button"
-        onClick={() => handleClick('contact')}
-        color="inherit"
-      >
-        contact
-      </Button>
+    <Grid container direction="row" justify="space-around" alignItems="center" xs={9}>
+      <Grid item>
+        <Button
+          fullWidth
+          className={classNames(classes.button)}
+          data-cy="aboutButton"
+          color="inherit"
+          onClick={() => handleClick('about')}
+        >
+          {renderSelectionBar('about')}
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button
+          fullWidth
+          className={classNames(classes.button)}
+          data-cy="portfolioButton"
+          color="inherit"
+          onClick={() => handleClick('portfolio')}
+        >
+          {renderSelectionBar('portfolio')}
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button
+          fullWidth
+          className={classNames(classes.button)}
+          data-cy="blogButton"
+          onClick={() => handleClick('blog')}
+          color="inherit"
+        >
+          {renderSelectionBar('blog')}
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button
+          fullWidth
+          className={classNames(classes.button)}
+          data-cy="contact Button"
+          onClick={() => handleClick('contact')}
+          color="inherit"
+        >
+          {renderSelectionBar('contact')}
+        </Button>
+      </Grid>
     </Grid>
   );
 };
