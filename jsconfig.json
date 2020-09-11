@@ -11,7 +11,8 @@
       "modules/*": ["./src/modules/*"],
       "utils/*": ["./src/utils/*"],
       "theme/*": ["./src/theme/*"],
-      "static/*": ["./src/static/*"]
+      "static/*": ["./src/static/*"],
+      "apis/*": ["./src/apis/*"]
     }
   },
   "exclude": ["node_modules", "dist", "public"]

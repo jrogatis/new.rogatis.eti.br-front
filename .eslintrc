@@ -50,6 +50,10 @@
           [
             "modules",
             "./src/modules"
+          ],
+           [
+            "apis",
+            "./src/apis"
           ]
         ],
         "extensions": [

@@ -47,6 +47,10 @@ const composeEnhancers =
     : compose;
 
 const middlewares = [routeMiddleware, thunkMiddleware];
+if ((module.hot && process.env.NODE_ENV !== 'production') || process.env.CI === true) {
+  const logger = require('redux-logger').default;
+  middlewares.push(logger);
+}
 
 const store = createStore(pReducer, composeEnhancers(applyMiddleware(...middlewares)));
 
