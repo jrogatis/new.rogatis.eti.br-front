@@ -14,7 +14,7 @@ const RightHeader = () => {
     };
   }, []);
   return (
-    <Grid container direction="row" justify="flex-end" alignItems="center">
+    <Grid container direction="row" justify="flex-end" alignItems="center" wrap="nowrap">
       <Grid item>
         <IconButton>
           <Icon className="fab fa-github-alt" style={{ color: 'white' }} />

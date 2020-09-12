@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, Grid, makeStyles } from '@material-ui/core';
-import { history } from 'store';
 import classNames from 'classnames';
 
 const useStyles = makeStyles(theme => ({
@@ -28,13 +27,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const CenterHeader = () => {
-  const [selectedBtn, setSelectedBtn] = useState('');
+const CenterHeader = ({ selectedBtn, handleClick }) => {
   const classes = useStyles();
-  const handleClick = name => {
-    setSelectedBtn(name);
-    history.push(name);
-  };
 
   const renderSelectionBar = value => {
     return (
@@ -51,7 +45,7 @@ const CenterHeader = () => {
   };
 
   return (
-    <Grid container direction="row" justify="space-around" alignItems="center" xs={9}>
+    <Grid container direction="row" justify="space-around" alignItems="center" xs={9} wrap="nowrap">
       <Grid item>
         <Button
           fullWidth
