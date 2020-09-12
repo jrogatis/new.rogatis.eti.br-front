@@ -1,19 +1,30 @@
 import React from 'react';
-import personalLogo from 'static/images/personalLogo.svg';
-import { Grid } from '@material-ui/core';
+import { Grid, makeStyles, IconButton } from '@material-ui/core';
+import { white, hoverBlue } from 'theme/colors';
+import PersonalLogo from 'static/icons/PersonalLogo';
+const useStyles = makeStyles(theme => ({
+  logo: {
+    fill: white,
+    height: 55,
+    width: 55,
+    '&:hover': {
+      fill: hoverBlue,
+      backgroundColor: white,
+    },
+    root: {
+      backgroundColor: white,
+      borderColor: white,
+    },
+  },
+}));
 
 const LeftHeader = ({ handleClick }) => {
+  const classes = useStyles();
   return (
     <Grid>
-      <img
-        alt="logo JP"
-        src={personalLogo}
-        width={55}
-        height={55}
-        onClick={() => {
-          handleClick('/');
-        }}
-      />
+      <IconButton onClick={() => handleClick('/')}>
+        <PersonalLogo className={classes.logo} />
+      </IconButton>
     </Grid>
   );
 };

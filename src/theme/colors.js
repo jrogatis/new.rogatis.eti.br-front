@@ -1,5 +1,5 @@
-export const superDarkBlue = '#1F3D7B';
-export const darkBlue = '#2E69A5';
+export const superhoverBlue = '#1F3D7B';
+export const hoverBlue = '#064A99';
 export const lightBlue = '#2482be';
 export const superLightBlue = '#009DE1';
 export const highlightBlue = '#CCF0FF';
@@ -17,8 +17,8 @@ export const black = '#000000';
 export const white = '#ffffff';
 
 export const tv = superLightBlue;
-export const landLine = superDarkBlue;
-export const internet = darkBlue;
+export const landLine = superhoverBlue;
+export const internet = hoverBlue;
 export const mobile = darkRed;
 
 export const success = '#03DAC6';

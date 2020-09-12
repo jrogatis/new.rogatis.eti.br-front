@@ -1,5 +1,5 @@
 import {
-  darkBlue,
+  hoverBlue,
   lightBlue,
   superLightBlue,
   darkRed,
@@ -22,7 +22,7 @@ export default {
   primary: {
     light: superLightBlue,
     main: lightBlue,
-    dark: darkBlue,
+    dark: hoverBlue,
     contrastText: lightGray,
   },
   secondary: {
@@ -41,7 +41,7 @@ export default {
     main: white,
   },
   blue: {
-    main: darkBlue,
+    main: hoverBlue,
   },
   colorByProducts: {
     tv,
