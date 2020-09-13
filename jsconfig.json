@@ -1,16 +1,18 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": false,
-    "baseUrl": "./",
+    "baseUrl": "src",
     "paths": {
       "@": ["src"],
       "components/*": ["./src/components/*"],
       "containers/*": ["./src/containers/*"],
       "router/*": ["./src/router/*"],
       "store/*": ["./src/store/*"],
+      "modules/*": ["./src/modules/*"],
       "utils/*": ["./src/utils/*"],
       "theme/*": ["./src/theme/*"],
-      "static/*": ["./src/static/*"]
+      "static/*": ["./src/static/*"],
+      "apis/*": ["./src/apis/*"]
     }
   },
   "exclude": ["node_modules", "dist", "public"]

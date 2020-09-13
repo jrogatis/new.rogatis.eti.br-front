@@ -46,6 +46,14 @@
           [
             "static",
             "./src/static"
+          ],
+          [
+            "modules",
+            "./src/modules"
+          ],
+           [
+            "apis",
+            "./src/apis"
           ]
         ],
         "extensions": [
