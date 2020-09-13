@@ -7,7 +7,6 @@ import {
   lightGray,
   mainGray,
   darkGray,
-  hoverGray,
   white,
   tv,
   landLine,
@@ -35,7 +34,6 @@ export default {
     light: lightGray,
     main: mainGray,
     dark: darkGray,
-    hover: hoverGray,
   },
   white: {
     main: white,
