@@ -2,8 +2,11 @@ import React from 'react';
 import { Button, Grid, makeStyles } from '@material-ui/core';
 import classNames from 'classnames';
 import { white, hoverBlue } from 'theme/colors';
+import SelectedBar from '../SelectedBar';
+
 const useStyles = makeStyles(theme => ({
   button: {
+    marginTop: 0,
     textTransform: 'none',
     fontSize: '1.3rem',
     fontWeight: 800,
@@ -13,36 +16,10 @@ const useStyles = makeStyles(theme => ({
       color: hoverBlue,
     },
   },
-  divSelected: {
-    borderWidth: '1px',
-    borderStyle: 'solid',
-    maxHeight: '0.6px',
-    borderColor: 'transparent',
-  },
-  selected: {
-    borderColor: 'white',
-    borderWidth: '1px',
-    borderStyle: 'solid',
-    maxHeight: '0.6px',
-  },
 }));
 
 const CenterHeader = ({ selectedBtn, handleClick }) => {
   const classes = useStyles();
-
-  const renderSelectionBar = value => {
-    return (
-      <Grid container direction="column">
-        {value}
-        <div
-          className={classNames(
-            classes.divSelected,
-            selectedBtn === value ? classes.selected : null,
-          )}
-        />
-      </Grid>
-    );
-  };
 
   return (
     <Grid
@@ -54,7 +31,7 @@ const CenterHeader = ({ selectedBtn, handleClick }) => {
       xs={9}
       wrap="nowrap"
     >
-      <Grid item>
+      <Grid item xs={3}>
         <Button
           fullWidth
           className={classNames(classes.button)}
@@ -62,10 +39,10 @@ const CenterHeader = ({ selectedBtn, handleClick }) => {
           color="inherit"
           onClick={() => handleClick('about')}
         >
-          {renderSelectionBar('about')}
+          <SelectedBar value="about" selectedBtn={selectedBtn} />
         </Button>
       </Grid>
-      <Grid item>
+      <Grid item xs={3}>
         <Button
           fullWidth
           className={classNames(classes.button)}
@@ -73,10 +50,10 @@ const CenterHeader = ({ selectedBtn, handleClick }) => {
           color="inherit"
           onClick={() => handleClick('portfolio')}
         >
-          {renderSelectionBar('portfolio')}
+          <SelectedBar value="portfolio" selectedBtn={selectedBtn} />
         </Button>
       </Grid>
-      <Grid item>
+      <Grid item xs={3}>
         <Button
           fullWidth
           className={classNames(classes.button)}
@@ -84,10 +61,10 @@ const CenterHeader = ({ selectedBtn, handleClick }) => {
           onClick={() => handleClick('blog')}
           color="inherit"
         >
-          {renderSelectionBar('blog')}
+          <SelectedBar value="blog" selectedBtn={selectedBtn} />
         </Button>
       </Grid>
-      <Grid item>
+      <Grid item xs={3}>
         <Button
           fullWidth
           className={classNames(classes.button)}
@@ -95,7 +72,7 @@ const CenterHeader = ({ selectedBtn, handleClick }) => {
           onClick={() => handleClick('contact')}
           color="inherit"
         >
-          {renderSelectionBar('contact')}
+          <SelectedBar value="contact" selectedBtn={selectedBtn} />
         </Button>
       </Grid>
     </Grid>

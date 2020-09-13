@@ -29,17 +29,17 @@ const RightHeader = () => {
   return (
     <Grid container direction="row" justify="flex-end" alignItems="center" wrap="nowrap">
       <Grid item>
-        <IconButton className={classes.icon}>
+        <IconButton className={classes.icon} href="https://github.com/jrogatis">
           <Icon className="fab fa-github-alt" />
         </IconButton>
       </Grid>
       <Grid item>
-        <IconButton className={classes.icon}>
+        <IconButton className={classes.icon} href="https://www.linkedin.com/in/jrogatis">
           <Icon className="fab fa-linkedin" />
         </IconButton>
       </Grid>
       <Grid item>
-        <IconButton className={classes.icon}>
+        <IconButton className={classes.icon} href="https://www.facebook.com/jrogatis">
           <Icon className="fab fa-facebook-square" />
         </IconButton>
       </Grid>
