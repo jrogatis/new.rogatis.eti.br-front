@@ -23,7 +23,7 @@ const SelectedBar = ({ value, selectedBtn }) => {
     <Grid container direction="column">
       {value}
       <div
-        className={classNames(classes.divSelected, selectedBtn === value ? classes.selected : null)}
+        className={classNames(classes.divSelected, { [classes.selected]: selectedBtn === value })}
       />
     </Grid>
   );
