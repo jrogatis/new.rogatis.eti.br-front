@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'neosans';
+  src: local('neosans'), url(./neo-sans-std.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'neosans';
+  src: local('neosans'), url(./neo-sans-std-bold.otf);
+    font-weight: bold;
+    font-style: normal;
+}

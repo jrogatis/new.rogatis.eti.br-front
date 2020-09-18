@@ -12,7 +12,7 @@ const axiosErrorsInterceptor = (req = {}) => {
 const request = params => {
   axios.interceptors.response.use(response => response, axiosErrorsInterceptor);
   return axios({
-    headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    headers: { 'content-type': 'application/json' },
     ...params,
   });
 };

@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
   },
   appToolbar: {
-    marginBottom: 10,
+    marginBottom: 0,
     maxHeight: 60,
     paddingTop: 0,
   },

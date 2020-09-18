@@ -16,11 +16,6 @@ export const lightRed = '#e40021';
 export const black = '#000000';
 export const white = '#ffffff';
 
-export const tv = superLightBlue;
-export const landLine = superhoverBlue;
-export const internet = hoverBlue;
-export const mobile = darkRed;
-
 export const success = '#03DAC6';
 export const error = '#F44336';
 export const waiting = '#FBBD26';

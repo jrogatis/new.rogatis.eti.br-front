@@ -8,10 +8,6 @@ import {
   mainGray,
   darkGray,
   white,
-  tv,
-  landLine,
-  internet,
-  mobile,
   error,
   success,
   waiting,
@@ -40,12 +36,6 @@ export default {
   },
   blue: {
     main: hoverBlue,
-  },
-  colorByProducts: {
-    tv,
-    landLine,
-    internet,
-    mobile,
   },
   status: {
     error,
