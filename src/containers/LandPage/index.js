@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Grid, CardMedia, Slide, makeStyles } from '@material-ui/core';
-import RightImage from 'static/images/skyDir.jpg';
-import LeftImage from 'static/images/skyEsqV5.jpg';
-import LeftText from '../../components/LeftText';
 import LatestProjects from 'components/LatestProjects';
 import { requestFrontProjectsAction } from 'modules/frontProjects/actions';
 import { useSelector, useDispatch } from 'react-redux';
+import RightImage from 'static/images/skyDir.jpg';
+import LeftImage from 'static/images/skyEsqV5.jpg';
+import LeftText from '../../components/LeftText';
 
 const useStyles = makeStyles(theme => ({
   grid: {
@@ -20,6 +20,7 @@ const LandingPage = () => {
   const dispatch = useDispatch();
   const [onLoad, setOnLoad] = useState(false);
   const classes = useStyles();
+  const frontProjectsItems = useSelector(state => state.frontProjects.items);
   useEffect(() => {
     const timer = setTimeout(() => setOnLoad(true), 1300);
     return () => clearTimeout(timer);
@@ -46,7 +47,7 @@ const LandingPage = () => {
           </Slide>
         </Grid>
       </Grid>
-      <LatestProjects />
+      <LatestProjects frontProjectsItems={frontProjectsItems} />
     </Grid>
   );
 };

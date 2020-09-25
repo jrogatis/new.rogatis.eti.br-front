@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles, Fade, useMediaQuery, Typography } from '@material-ui/core';
+import { makeStyles, Fade, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {

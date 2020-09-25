@@ -5,6 +5,7 @@ const { FRONT_PROJECTS_REQUEST, FRONT_PROJECTS_FULLFILLED, FRONT_PROJECTS_REJECT
 const initialState = {
   isLoadingFrontProjects: false,
   errored: false,
+  items: [],
 };
 
 export default (state = Object.assign({}, initialState), action) => {
@@ -17,7 +18,7 @@ export default (state = Object.assign({}, initialState), action) => {
       return {
         ...state,
         isLoadingFrontProjects: false,
-        frontProjects: payload,
+        items: payload.data,
       };
     case FRONT_PROJECTS_REJECTED:
       return Object.assign({}, initialState);

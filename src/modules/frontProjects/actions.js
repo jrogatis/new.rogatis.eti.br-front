@@ -8,7 +8,6 @@ const fetchFrontProjects = async () => {
       url: url(),
     });
   } catch (err) {
-    console.log(err);
     throw new Error(err);
   }
 };

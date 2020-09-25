@@ -1,37 +1,50 @@
 import React, { useEffect, useState } from 'react';
-import { Grid, Typography, makeStyles, Slide } from '@material-ui/core';
+import { Grid, makeStyles, Slide } from '@material-ui/core';
+import ProjectCard from 'components/ProjectCard';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import LastestTitle from './LatestTitle';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    paddingTop: '2%',
-  },
-  lateralGrids: {
-    borderBottom: '1px solid #000000',
-    backgroundColor: 'red',
-  },
-  text: {
-    fontWeight: 'bold',
+    marginBottom: '1%',
+    paddingLeft: '1%',
+    paddingRight: '1%',
   },
 }));
 
-const LatestProjects = () => {
+const LatestProjects = ({ frontProjectsItems }) => {
   const [onLoad, setOnLoad] = useState(false);
   const classes = useStyles();
   useEffect(() => {
     const timer = setTimeout(() => setOnLoad(true), 1300);
     return () => clearTimeout(timer);
   }, []);
-
+  const toColumn = useMediaQuery(theme => theme.breakpoints.down('xs'));
   return (
     <Slide in={onLoad} direction="up">
-      <Grid container direction="row" justify="center" alignItems="center" className={classes.root}>
-        <Grid item xs={3} className={classes.lateralGrids}></Grid>
-        <Grid item xs={4}>
-          <Typography align="center" variant="subtitle1" noWrap paragraph className={classes.text}>
-            SOME OF MY LATEST WORK
-          </Typography>
+      <Grid
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
+        className={classes.root}
+      >
+        <LastestTitle />
+        <Grid
+          container
+          direction={toColumn ? 'column' : 'row'}
+          justify="space-around"
+          alignItems="center"
+          className={classes.root}
+          spacing={2}
+        >
+          {frontProjectsItems.length > 0 &&
+            frontProjectsItems.map(item => (
+              <Grid item xs={toColumn ? 12 : 4} key={item.id}>
+                <ProjectCard project={item} />
+              </Grid>
+            ))}
         </Grid>
-        <Grid item xs={3} className={classes.lateralGrids}></Grid>
       </Grid>
     </Slide>
   );
