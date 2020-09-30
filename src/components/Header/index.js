@@ -9,11 +9,13 @@ import BreadCrumb from './BreadCrumb';
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
+    marginBottom: 65,
   },
   appToolbar: {
-    marginBottom: 10,
     maxHeight: 60,
     paddingTop: 0,
+    position: 'fixed',
+    top: 0,
   },
 }));
 
@@ -33,7 +35,7 @@ const Header = () => {
 
   return (
     <Collapse in={onLoad} className={classes.root}>
-      <AppBar position="static" className={classes.appToolbar} data-cy="AppBar">
+      <AppBar className={classes.appToolbar} data-cy="AppBar">
         <Toolbar>
           <Grid container direction="row" justify="space-between" alignItems="flex-start">
             <Grid item xs={2}>

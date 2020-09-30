@@ -4,13 +4,14 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 import PrivateRouter from 'router/privateRouter';
 import Header from 'components/Header';
+import BottomNav from 'components/BottomNav';
+import { backgroundGray } from 'theme/colors';
 
 const useStyles = makeStyles(() =>
   createStyles({
     root: {
       width: '100vw',
-      height: '100vh',
-      overflow: 'hidden',
+      backgroundColor: backgroundGray,
     },
   }),
 );
@@ -27,6 +28,7 @@ const Main = () => {
     >
       <Header />
       <PrivateRouter />
+      <BottomNav />
     </Grid>
   );
 };
