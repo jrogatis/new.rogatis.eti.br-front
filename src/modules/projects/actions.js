@@ -1,9 +1,14 @@
 import * as constants from './constants';
+import endpoints, { api } from './endpoints';
 
-const fetchProjects = async dispatch => {
+const url = () => endpoints.projects();
+const fetchProjects = async () => {
   try {
-  } catch (error) {
-    // Handle error
+    return api.get({
+      url: url(),
+    });
+  } catch (err) {
+    throw new Error(err);
   }
 };
 
@@ -13,7 +18,7 @@ const ProjectsRequest = () => ({
 
 const projectsFullFilled = payload => ({
   type: constants.PROJECTS_FULLFILLED,
-  payload,
+  payload: payload.data,
 });
 
 const projectsRejected = () => ({
