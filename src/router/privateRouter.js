@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import LandingPage from 'containers/LandPage';
 import About from 'containers/About';
-import Portfolio from 'containers/Porfolio';
+import Portfolio from 'containers/Portfolio';
 import Blog from 'containers/Blog';
 import Contact from 'containers/Contact';
 import NoMatch from '../pages/404';

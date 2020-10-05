@@ -15,24 +15,25 @@ const useStyles = makeStyles({
     },
   },
   card: {
+    maxHeight: 380,
     cursor: 'pointer',
     '&:hover': {
       transform: 'translate3d(0, -30px, 0)',
       transition: 'all 300ms cubic-bezier(0.34, 1.61, 0.7, 1)',
     },
   },
+  img: {
+    maxHeight: 250,
+  },
 });
 
 const ProjectCard = ({ project }) => {
   const classes = useStyles();
-  const onClick = () => {
-    window.location.href = project.siteUrl;
-  };
   return (
-    <a href={project.siteUrl} className={classes.link}>
-      <Card className={classes.card} product onCLick={onClick}>
+    <Card className={classes.card} product>
+      <a href={project.siteUrl} className={classes.link}>
         <CardHeader image className={classes.cardHeaderHover}>
-          <img src={project.imgUrl} alt={project.title} />
+          <img src={project.imgUrl} alt={project.title} className={classes.img} />
         </CardHeader>
         <CardBody>
           <Typography gutterBottom noWrap variant="h5" align="center">
@@ -45,8 +46,8 @@ const ProjectCard = ({ project }) => {
         <CardFooter product>
           <div className={`${classes.stats} ${classes.productStats}`}>{project.type}</div>
         </CardFooter>
-      </Card>
-    </a>
+      </a>
+    </Card>
   );
 };
 

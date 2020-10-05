@@ -5,6 +5,7 @@ const { PROJECTS_REQUEST, PROJECTS_FULLFILLED, PROJECTS_REJECTED } = constants;
 const initialState = {
   isLoadingProjects: false,
   errored: false,
+  items: [],
 };
 
 export default (state = Object.assign({}, initialState), action) => {
@@ -17,7 +18,7 @@ export default (state = Object.assign({}, initialState), action) => {
       return {
         ...state,
         isLoadingCurLocation: false,
-        projects: payload,
+        items: payload,
       };
     case PROJECTS_REJECTED:
       return Object.assign({}, initialState);
